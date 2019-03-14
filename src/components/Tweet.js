@@ -4,11 +4,18 @@ import {formatTweet, formatDate} from "../utils/helpers";
 import TiArrowBackOutline from 'react-icons/lib/ti/arrow-back-outline';
 import TiHeartOutline from 'react-icons/lib/ti/heart-outline';
 import TiHeartFullOutline from 'react-icons/lib/ti/heart-full-outline';
+import {handleToggleTweet} from "../actions/tweets";
 
 class Tweet extends React.Component{
     handleLike=(e)=>{
         e.preventDefault();
         //todo: save like into store and db
+        const{dispatch, tweet, authedUser}=this.props;
+        dispatch(handleToggleTweet({
+            id: tweet.id,
+            hasLiked: tweet.hasLiked,
+            authedUser
+        }));
     };
     toParent=(e, id)=>{
         e.preventDefault();
