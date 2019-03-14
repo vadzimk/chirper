@@ -6,6 +6,8 @@ import {setAuthedUser} from "./authedUser";
 //assign authUser to mock api
 const AUTH_ID = 'tylermcginnis';
 
+
+//to support returning a funcion from action creator we need redux-thunk package
 export const handleInitialData =()=>(dispatch)=>{
     return getInitialData().then(({users, tweets})=>{
         //add the users and tweets to the state of the redux store -dispatch a few different actions
