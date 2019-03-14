@@ -2,7 +2,7 @@
 //any time the action is dispatched
 const logger=(store)=>(next)=>(action)=>{
     console.group(action.type);
-    conole.log("The action is: ", action);
+    console.log("The action is: ", action);
 
     //next will be dispatch and we pass it an action - it will update the state
     const returnValue = next(action);
